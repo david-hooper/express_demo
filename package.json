@@ -1,0 +1,17 @@
+{
+    "name": "express_app",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "Node.js and express on Docker",
+    "author": "Firstname Lastname <mynames@example.com>",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon app.js",
+        "start:dev": "NODE_ENV=dev nodemon app.js",
+        "start:test": "NODE_ENV=test nodemon app.js"
+    },
+    "dependencies": {
+        "express": "^4.16.1",
+        "pg": "^8.8.0"
+    }
+}
