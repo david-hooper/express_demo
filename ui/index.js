@@ -1,6 +1,6 @@
 console.log("I told you so!")
 
-let ApiUrl = process.env.API_URL || "http://localhost:3000";
+let ApiUrl = "http://localhost:3000";
 
 
 var classList = document.getElementById("class-list");
@@ -27,7 +27,7 @@ var submit = document.getElementById('create-student').addEventListener("click",
         "age": age
     }
     
-    fetch(`${ApiUrl}/api/students", {
+    fetch(`${ApiUrl}/api/students`, {
         method: 'POST',
         mode: 'cors',
         headers: { 'Content-Type': 'application/json' },
