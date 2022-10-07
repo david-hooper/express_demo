@@ -1,6 +1,6 @@
-console.log("I told you so!")
+const config = require('../config');
 
-let ApiUrl = "http://localhost:3000";
+let ApiUrl = config[process.env.NODE_ENV || "dev"];
 
 
 var classList = document.getElementById("class-list");
@@ -12,7 +12,7 @@ fetch(`${ApiUrl}/api/students`)
         data.forEach(student => {
             var studentElement = document.createElement('li');
             studentElement.innerHTML = `${student.first_name} - age ${student.age}`;
-            console.log(studentElement);
+            // console.log(studentElement);
             classList.appendChild(studentElement);
         });
     });
@@ -29,14 +29,14 @@ var submit = document.getElementById('create-student').addEventListener("click",
     
     fetch(`${ApiUrl}/api/students`, {
         method: 'POST',
-        mode: 'cors',
+        mode: cors,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(student)
     })
     .then(response => {
         if(response.status == 201){
             var studentElement = document.createElement('li');
-            studentElement.innerHTML = `${student.first} - age ${student.age}`;
+            studentElement.innerHTML = `${student.first_name} - age ${student.age}`;
             classList.appendChild(studentElement);
         }else {
             alert("something went HORRIBLY WRONG!!!", response);

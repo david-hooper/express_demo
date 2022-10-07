@@ -1,8 +1,0 @@
-{
-    "dev":{
-        "connectionString":"127.0.0.1:5432" 
-    },
-    "test":{
-        "connectionString":"127.123.123.234:5432" 
-    }
-}
